@@ -47,6 +47,7 @@
 <div id="sidebar"><a href="{{ route('index') }}" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
   <ul>
     <li class="{{ Request::is('index') ? 'active' : '' }}"><a href="{{ route('index') }}"><i class="icon icon-home"></i> <span>Dashboard</span></a> </li>
+    <li class="{{ Request::is('agendacamat') ? 'active' : '' }}"><a href="{{ route('agendacamat') }}"><i class="icon icon-file"></i> <span>Agenda Camat</span></a></li>
     <li class="{{ Request::is('suratmasuk') ? 'active' : '' }}"> <a href="{{ route('suratmasuk') }}"><i class="icon icon-inbox"></i> <span>Surat Masuk</span></a> </li>
     <li class="{{ Request::is('suratkeluar') ? 'active' : '' }}"> <a href="{{ route('suratkeluar') }}"><i class="icon icon-inbox"></i> <span>Surat keluar</span></a> </li>
     <li class="{{ Request::is('rekap') ? 'active' : '' }}"><a href="{{ route('rekap') }}"><i class="icon icon-th-list"></i> <span>Rakapitulasi</span></a></li>

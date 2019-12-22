@@ -23,7 +23,6 @@
     </div>
     <hr>
     <div class="container-fluid">
-
     </div>
   </div>
 </div>

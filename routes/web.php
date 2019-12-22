@@ -21,6 +21,9 @@ Route::get('/index', 'HomeController@index')->name('index');
 Route::get('/suratmasuk', 'AdminController@suratmasuk')->name('suratmasuk');
 Route::get('/suratkeluar', 'AdminController@suratkeluar')->name('suratkeluar');
 Route::get('/rekap', 'AdminController@rekap')->name('rekap');
+Route::get('/agendacamat', 'AdminController@agendacamat')->name('agendacamat');
+Route::get('/rekap/suratmasuk', 'AdminController@indexsm')->name('indexsm');
+Route::get('/rekap/suratkeluar', 'AdminController@indexsk')->name('indexsk');
 
 Route::post('simpansm','AdminController@simpansm')->name('simpansm');
 Route::post('simpansk','AdminController@simpansk')->name('simpansk');

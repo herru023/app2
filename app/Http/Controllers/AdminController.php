@@ -15,7 +15,8 @@ class AdminController extends Controller
     }
     public function suratkeluar()
     {
-    	return view('suratkeluar');
+    	$suratk = Suratkeluar::all();
+    	return view('suratkeluar', compact('suratk'));
     }
     public function rekap()
     {
@@ -45,6 +46,20 @@ class AdminController extends Controller
     	$suratk->save();
 
     	return redirect()->route('suratkeluar')->with('succes');
+    }
+    public function indexsm()
+    {
+    	$suratmasuk = Suratmasuk::all();
+    	return view('suratmasuk.indexsm', compact('suratmasuk'));
+    }
+    public function indexsk()
+    {
+    	$suratkeluar = Suratkeluar::all();
+    	return view('suratkeluar.indexsk', compact('suratkeluar'));
+    }
+    public function agendacamat()
+    {
+    	return view('agendacamat');
     }
 }
   
