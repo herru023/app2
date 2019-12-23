@@ -16,42 +16,37 @@
             <h5>Surat Masuk</h5>
           </div>
           <div class="widget-content nopadding">
-				<div class="widget-box">
-		            <table class="table table-bordered table-striped">
-		              <thead>
-		                <tr>
-		                  <th>No.</th>
-		                  <th>Surat dari</th>
-		                  <th>Tanggal Surat</th>
-		                  <th>Nomor Surat</th>
-		                  <th>Tanggal diterima</th>
-		                  <th>Untuk</th>
-		                  <th>Prihal</th>
-		                  <th>aksi</th>
-		                </tr>
-		              </thead>
-		              <tbody>
-		              	<?php $no = 0;?>
-		              	@foreach($suratmasuk as $row)
-		              	<?php $no++;?>
-		              	 <tr>
-		              	 	<td>{{ $no }}</td>
-		              	 	<td>{{ $row->suratdari }}</td>
-		              	 	<td>{{ $row->tglsurat }}</td>
-		              	 	<td>{{ $row->nosurat }}</td>
-		              	 	<td>{{ date_format ($row->created_at, 'd-m-Y') }}</td>
-		              	 	<td>{{ $row->untuk }}</td>
-		              	 	<td>{{ $row->prihal }}</td>
-		              	 	<td>asdf</td>
-		              	 </tr>
-		              	 @endforeach
-
-
-
-		              </tbody>
-		            </table>
-		          </div>
-		        </div>
+            <table id="test" class="table table-bordered data-table">
+              <thead>
+                <tr>
+                  <th>No.</th>
+                  <th>Surat dari</th>
+                  <th>Tanggal Surat</th>
+                  <th>Nomor Surat</th>
+                  <th>Tanggal diterima</th>
+                  <th>Untuk</th>
+                  <th>Prihal</th>
+                  <th>aksi</th>
+                </tr>
+              </thead>
+              <tbody>
+              	<?php $no = 0;?>
+              	@foreach($suratmasuk as $row)
+              	<?php $no++;?>
+              	 <tr>
+              	 	<td>{{ $no }}</td>
+              	 	<td>{{ $row->suratdari }}</td>
+              	 	<td>{{ $row->tglsurat }}</td>
+              	 	<td>{{ $row->nosurat }}</td>
+              	 	<td>{{ date_format ($row->created_at, 'd-m-Y') }}</td>
+              	 	<td>{{ $row->untuk }}</td>
+              	 	<td>{{ $row->prihal }}</td>
+              	 	<td>asdf</td>
+              	 </tr>
+              	 @endforeach
+              </tbody>
+            </table>
+        </div>
 
         </div>
       </div>
@@ -59,5 +54,14 @@
   </div>
 
 </div>
+
+ <script type="text/javascript">
+
+$(document).ready( function () {
+    $('#test').DataTable();
+} );
+
+</script>
+
 
 @endsection

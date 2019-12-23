@@ -76,8 +76,7 @@
 		          <h5>Data Surat Masuk</h5>
 		        </div>
 		        <div class="widget-content nopadding">
-				<div class="widget-box">
-		            <table class="table table-bordered table-striped">
+		            <table id="test" class="table table-bordered data-table">
 		              <thead>
 		                <tr>
 		                  <th>No.</th>
@@ -102,12 +101,16 @@
 
 		              </tbody>
 		            </table>
-		          </div>
 		        </div>
 		      </div>
 		    </div>
 	  </div>
   </div>
 </div>
+
+$(document).ready( function () {
+    $('#test').DataTable();
+} );
+
 
 @endsection
