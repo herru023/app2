@@ -24,7 +24,10 @@ Route::get('/rekap', 'AdminController@rekap')->name('rekap');
 Route::get('/agendacamat', 'AdminController@agendacamat')->name('agendacamat');
 Route::get('/rekap/suratmasuk', 'AdminController@indexsm')->name('indexsm');
 Route::get('/rekap/suratkeluar', 'AdminController@indexsk')->name('indexsk');
+Route::get('/rekap/jadwalcamat', 'AdminController@indexjcamat')->name('indexjcamat');
 
 Route::post('simpansm','AdminController@simpansm')->name('simpansm');
 Route::post('simpansk','AdminController@simpansk')->name('simpansk');
- 
+Route::post('simpanac','AdminController@simpanac')->name('simpanac');
+
+Route::get('/rekap/suratkeluar/', 'AdminController@indexsk')->name('indexsk');

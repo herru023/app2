@@ -46,6 +46,14 @@ hr{ border-top-color:#dadada;}
 .bg_lh{ background:#b6b3b3;}
 
 /* Header */
+
+.tangah {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+}
+
 #header {
 	height: 77px;
 	position: relative;
@@ -53,7 +61,7 @@ hr{ border-top-color:#dadada;}
 	z-index: -9;
 }
 #header h1 {
-	background: url("../img/logo.png") no-repeat scroll 0 0 transparent;
+	background: url("../img/logo1.png") no-repeat scroll 0 0 transparent;
 	height: 31px;
 	left: 20px;
 	line-height: 600px;

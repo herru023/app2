@@ -16,7 +16,7 @@
             <h5>Surat Masuk</h5>
           </div>
           <div class="widget-content nopadding">
-            <table id="test" class="table table-bordered data-table">
+            <table id="table_id" class="table table-bordered table-striped with-check">
               <thead>
                 <tr>
                   <th>No.</th>
@@ -54,14 +54,4 @@
   </div>
 
 </div>
-
- <script type="text/javascript">
-
-$(document).ready( function () {
-    $('#test').DataTable();
-} );
-
-</script>
-
-
 @endsection

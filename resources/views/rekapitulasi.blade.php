@@ -19,7 +19,7 @@
 	      <ul class="quick-actions">
 	        <li class="bg_ly"> <a href="{{ route('indexsm') }}"> <i class="icon-inbox"></i> Surat Masuk </a> </li>
 	        <li class="bg_lo"> <a href="{{ route('indexsk') }}"> <i class="icon-pencil"></i> Surat Keluar </a> </li>
-	        <li class="bg_ls"> <a href="{{ route('rekap') }}"> <i class="icon-th"></i> Camat </a> </li>
+	        <li class="bg_ls"> <a href="{{ route('indexjcamat') }}"> <i class="icon-th"></i> Camat </a> </li>
 	      </ul>
 
 	      <br><br><br><br>
@@ -32,8 +32,5 @@
 </div>
 
 
-$(document).ready( function () {
-    $('#table_id').DataTable();
-} );
 
 @endsection

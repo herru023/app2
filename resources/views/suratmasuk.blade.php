@@ -76,7 +76,7 @@
 		          <h5>Data Surat Masuk</h5>
 		        </div>
 		        <div class="widget-content nopadding">
-		            <table id="test" class="table table-bordered data-table">
+		            <table id="table_id" class="table table-bordered data-table">
 		              <thead>
 		                <tr>
 		                  <th>No.</th>
@@ -95,7 +95,7 @@
 		              	 	<td>{{ $row->suratdari }}</td>
 		              	 	<td>{{ date_format ($row->created_at, 'd-m-Y') }}</td>
 		              	 	<td>{{ $row->prihal }}</td>
-		              	 	<td>asdf</td>
+		              	 	<td><a class="tip" href="" title="Lihat"><i class="icon-eye-open"></i></a> </td>
 		              	 </tr>
 		              	 @endforeach
 
@@ -108,9 +108,16 @@
   </div>
 </div>
 
+@endsection
+
+@section('script')
+
+<script>
+	
 $(document).ready( function () {
-    $('#test').DataTable();
+    $('#table_id').DataTable();
 } );
 
+</script>
 
 @endsection

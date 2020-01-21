@@ -10,11 +10,16 @@
 <link rel="stylesheet" href="{{asset('publicadmin/css/matrix-style.css')}}" />
 <link rel="stylesheet" href="{{asset('publicadmin/css/matrix-media.css')}}" />
 <link href="{{asset('publicadmin/font-awesome/css/font-awesome.css')}}" rel="stylesheet" />
+
+<link rel="stylesheet" href="{{asset('publicadmin/css/uniform.css')}}" />
+<link rel="stylesheet" href="{{asset('publicadmin/css/select2.css')}}" />
+
 <link rel="stylesheet" href="{{asset('publicadmin/css/jquery.gritter.css')}}" />
+<link rel="stylesheet" href="{{asset('time/css/bootstrap-datetimepicker.min.css')}}" />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.css"/>
- 
-<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.js"></script>
+
+
+
 </head>
 <body>
 
@@ -28,7 +33,7 @@
 <!--top-Header-menu-->
 <div id="user-nav" class="navbar navbar-inverse">
   <ul class="nav">
-    <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="icon icon-user"></i>  <span class="text">{{ Auth::user()->username }}</span><b class="caret"></b></a>
+    <li class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" class="dropdown-toggle"><i class="icon icon-user"></i>  <span class="text">{{ Auth::user()->username }}</span><b class="caret"></b></a>
       <ul class="dropdown-menu">
         <li><a href="#"><i class="icon-user"></i> My Profile</a></li>
         <li class="divider"></li>
@@ -53,7 +58,7 @@
     <li class="{{ Request::is('agendacamat') ? 'active' : '' }}"><a href="{{ route('agendacamat') }}"><i class="icon icon-file"></i> <span>Agenda Camat</span></a></li>
     <li class="{{ Request::is('suratmasuk') ? 'active' : '' }}"> <a href="{{ route('suratmasuk') }}"><i class="icon icon-inbox"></i> <span>Surat Masuk</span></a> </li>
     <li class="{{ Request::is('suratkeluar') ? 'active' : '' }}"> <a href="{{ route('suratkeluar') }}"><i class="icon icon-inbox"></i> <span>Surat keluar</span></a> </li>
-    <li class="{{ Request::is('rekap') ? 'active' : '' }}"><a href="{{ route('rekap') }}"><i class="icon icon-th-list"></i> <span>Rakapitulasi</span></a></li>
+    <li class="{{ Request::is('rekap*') ? 'active' : '' }}"><a href="{{ route('rekap') }}"><i class="icon icon-th-list"></i> <span>Rakapitulasi</span></a></li>
     <!-- <li><a href="grid.html"><i class="icon icon-fullscreen"></i> <span>Full width</span></a></li>
     <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>Forms</span> <span class="label label-important">3</span></a>
       <ul>
@@ -102,11 +107,12 @@
 
 
 <div class="row-fluid">
-  <div id="footer" class="span12"> 2013 &copy; Matrix Admin. Brought to you by <a href="http://themedesigner.in">Themedesigner.in</a> </div>
+  <div id="footer" class="span12"> 2019 &copy; Banjarmasin Tengah </div>
 </div>
 
 <!--end-Footer-part-->
 
+<script src="{{asset('time/js/bootstrap-datetimepicker.min.js')}}"></script> 
 <script src="{{asset('publicadmin/js/excanvas.min.js')}}"></script> 
 <script src="{{asset('publicadmin/js/jquery.min.js')}}"></script> 
 <script src="{{asset('publicadmin/js/jquery.ui.custom.js')}}"></script> 
@@ -129,6 +135,7 @@
 <script src="{{asset('publicadmin/js/matrix.popover.js')}}"></script> 
 <script src="{{asset('publicadmin/js/jquery.dataTables.min.js')}}"></script> 
 <script src="{{asset('publicadmin/js/matrix.tables.js')}}"></script> 
+
 
 </body>
 </html>

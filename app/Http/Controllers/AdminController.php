@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Suratmasuk;
 use App\Suratkeluar;
+use App\Agendacamat;
 
 class AdminController extends Controller
 {
@@ -52,14 +53,40 @@ class AdminController extends Controller
     	$suratmasuk = Suratmasuk::all();
     	return view('suratmasuk.indexsm', compact('suratmasuk'));
     }
-    public function indexsk()
+    public function indexsk(Request $req)
     {
-    	$suratkeluar = Suratkeluar::all();
+        if(!empty($req->report)){
+            $suratkeluar = Suratkeluar::where('dari', $req->report)->get();
+        }else{
+            $suratkeluar = Suratkeluar::all();
+        }
+    	;
     	return view('suratkeluar.indexsk', compact('suratkeluar'));
     }
     public function agendacamat()
     {
-    	return view('agendacamat');
+        $agenda1 = Agendacamat::all();
+    	return view('camat.agendacamat', compact('agenda1'));
     }
+    public function indexjcamat()
+    {   
+        $agenda2 = Agendacamat::all();
+        return view('camat.jadwalcamat', compact('agenda2'));
+    }
+
+    public function simpanac(Request $request)
+    {
+        $agenda = new Agendacamat();
+        $agenda->tglkegiatan = $request->tglkegiatan;
+        $agenda->kegiatan = $request->kegiatan;
+        $agenda->hari = $request->hari;
+        $agenda->waktu = $request->waktu;
+        $agenda->tempat = $request->tempat;
+        $agenda->bertugas = $request->bertugas;
+        $agenda->save();
+
+        return redirect()->route('agendacamat')->with('succes');
+    }
+
 }
   

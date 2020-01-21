@@ -16,51 +16,51 @@
 	          <h5>Masukkan Disposisi</h5>
 	        </div>
 	        <div class="widget-content nopadding">
-	          <form method="post" action="" class="form-horizontal">
+	          <form method="post" action="{{ route('simpanac') }}" class="form-horizontal">
 	          	{{ csrf_field() }}
 	            <div class="control-group">
-	              <label class="control-label">Surat Dari :</label>
+	              <label class="control-label">Tgl kegiatan :</label>
 	              <div class="controls">
-	                <input type="text" name="suratdari" class="span11" placeholder="Surat Dari" />
+	                <input type="date" name="tglkegiatan"  class="datepicker span11">
 	              </div>
 	            </div>
 	            <div class="control-group">
-	              <label class="control-label">Tanggal Surat :</label>
+	              <label class="control-label">Kegiatan :</label>
 	              <div class="controls">
-	                <input type="date" name="tglsurat" class="datepicker span11">
+	                <input type="text" name="kegiatan" class="span11">
 	               </div>
 	            </div>
 	            <div class="control-group">
-	              <label class="control-label">No Surat :</label>
+	              <label class="control-label">Hari kegiatan :</label>
 	              <div class="controls">
-	                <input type="text" name="nosurat" class="span11" placeholder="Nomor Surat" />
-	              </div>
-	            </div>
-	            <div class="control-group">
-	              <label class="control-label">Diterima Tanggal :</label>
-	              <div class="controls">
-	                <input type="date" name="tglditerima" class="datepicker span11">
-	               </div>
-	            </div>
-	            <div class="control-group">
-	              <label class="control-label">Diberikan ke :</label>
-	              <div class="controls">
-	                <select name="untuk">
-	                  <option value="Kasi Trantip">Kasi Trantip</option>
-	                  <option value="Kasi Pem">kasi Pem</option>
-	                  <option value="Kasi Kessos">kasi Kessos</option>
-	                  <option value="Kasi Ekoband">kasi Ekobang</option>
-	                  <option value="Kasi Umpag">kasi Umpag</option>
-	                  <option value="Kasi Pip">kasi Pip</option>
-	                  <option value="Camat">Camat</option>
+	                <select name="hari">
+	                  <option value="Senin">Senin</option>
+	                  <option value="Selasa">Selasa</option>
+	                  <option value="Rabu">Rabu</option>
+	                  <option value="Kamis">Kamis</option>
+	                  <option value="Jumat">Jumat</option>
+	                  <option value="Sabtu">Sabtu</option>
+	                  <option value="Minggu">Minggu</option>
 	                </select>
 	              </div>
 	            </div>
 	            <div class="control-group">
-	              <label class="control-label">Prihal :</label>
+	              <label class="control-label">Waktu :</label>
 	              <div class="controls">
-	                <textarea name="prihal" class="span11" ></textarea>
+	                <input type="text" name="waktu" class="span11">
 	              </div>
+	            </div>
+	            <div class="control-group">
+	              <label class="control-label">Tempat :</label>
+	              <div class="controls">
+	                <input type="text" name="tempat" class="span11">
+	               </div>
+	            </div>
+	            <div class="control-group">
+	              <label class="control-label">Bertugas :</label>
+	              <div class="controls">
+	                <input type="text" name="bertugas" class="span11">
+	               </div>
 	            </div>
 	            <div class="form-actions">
 	              <button type="submit" class="btn btn-success">Save</button>
@@ -73,26 +73,33 @@
 		  <div class="span6">
 		      <div class="widget-box">
 		        <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
-		          <h5>Data Surat Masuk</h5>
+		          <h5>Data Kegiatan camat</h5>
 		        </div>
 		        <div class="widget-content nopadding">
-				<div class="widget-box">
 		            <table class="table table-bordered table-striped">
 		              <thead>
 		                <tr>
 		                  <th>No.</th>
-		                  <th>Surat Dari</th>
-		                  <th>Tanggal Diterima</th>
-		                  <th>Prihal</th>
+		                  <th>Hari, waktu dan Tanggal</th>
+		                  <th>Tempat</th>
 		                  <th>aksi</th>
 		                </tr>
 		              </thead>
 		              <tbody>
+		              	<?php $no = 0;?>
+		              	@foreach($agenda1 as $row)
+		              	<?php $no++;?>
+		              	 <tr>
+		              	 	<td>{{ $no }}</td>
+		              	 	<td>{{ $row->hari }},{{ $row->waktu }} ,{{ $row->tglkegiatan }}</td>
+		              	 	<td>{{ $row->tempat }}</td>
+		              	 	<td>asdf</td>
+		              	 </tr>
+		              	 @endforeach
 
 
 		              </tbody>
 		            </table>
-		          </div>
 		        </div>
 		      </div>
 		    </div>

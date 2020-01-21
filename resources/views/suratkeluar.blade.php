@@ -70,7 +70,6 @@
 		          <h5>Data Surat Masuk</h5>
 		        </div>
 		        <div class="widget-content nopadding">
-				<div class="widget-box">
 		            <table class="table table-bordered table-striped">
 		              <thead>
 		                <tr>
