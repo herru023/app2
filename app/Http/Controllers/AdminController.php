@@ -88,5 +88,10 @@ class AdminController extends Controller
         return redirect()->route('agendacamat')->with('succes');
     }
 
+    public function cuti()
+    {
+        return view('cuti');
+    }
+
 }
   
