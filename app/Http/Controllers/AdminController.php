@@ -6,18 +6,19 @@ use Illuminate\Http\Request;
 use App\Suratmasuk;
 use App\Suratkeluar;
 use App\Agendacamat;
+use App\Cutitahunan;
 
 class AdminController extends Controller
 {
     public function suratmasuk()
     {
     	$datasurat = Suratmasuk::all();
-    	return view('suratmasuk', compact('datasurat'));
+    	return view('suratmasuk.suratmasuk', compact('datasurat'));
     }
     public function suratkeluar()
     {
     	$suratk = Suratkeluar::all();
-    	return view('suratkeluar', compact('suratk'));
+    	return view('suratkeluar.suratkeluar', compact('suratk'));
     }
     public function rekap()
     {
@@ -34,7 +35,7 @@ class AdminController extends Controller
     	$surat->prihal = $request->prihal;
     	$surat->save();
 
-    	return redirect()->route('suratmasuk')->with('success');
+    	return redirect()->route('suratmasuk.suratmasuk')->with('success');
     }
     public function simpansk(Request $request)
     {
@@ -46,7 +47,7 @@ class AdminController extends Controller
     	$suratk->prihal = $request->prihal;
     	$suratk->save();
 
-    	return redirect()->route('suratkeluar')->with('succes');
+    	return redirect()->route('suratkeluar.suratkeluar')->with('succes');
     }
     public function indexsm()
     {
@@ -85,13 +86,37 @@ class AdminController extends Controller
         $agenda->bertugas = $request->bertugas;
         $agenda->save();
 
-        return redirect()->route('agendacamat')->with('succes');
+        return redirect()->route('camat.agendacamat')->with('succes');
     }
 
     public function cuti()
     {
-        return view('cuti');
+        return view('cutitahunan.cuti');
     }
+    public function simpanc(Request $request)
+    {
+        $suratc = new Cutitahunan();
+        $suratc->nama = $request->nama;
+        $suratc->nip = $request->nip;
+        $suratc->pangkat = $request->pangkat;
+        $suratc->jabatan = $request->jabatan;
+        $suratc->unit = $request->unit;
+        $suratc->lamanya = $request->lamanya;
+        $suratc->jalankan = $request->jalankan;
+        $suratc->tgl_mulai = $request->tgl_mulai;
+        $suratc->sampai_tgl = $request->sampai_tgl;
+        $suratc->masuk_tgl = $request->masuk_tgl;
+
+        $suratc->save();
+
+        return redirect()->route('cutitahunan.cuti')->with('succes');
+    }
+    public function indexc()
+    {
+        $cuti = Cutitahunan::all();
+        return view('cutitahunan.indexc', compact('cuti'));
+    }
+    
 
 }
   

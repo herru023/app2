@@ -77,7 +77,7 @@
 		                  <th>Alamat Penerima</th>
 		                  <th>Dari</th>
 		                  <th>Tanggal Surat</th>
-		                  <th>aksi</th>
+
 		                </tr>
 		              </thead>
 		              <tbody>
@@ -89,7 +89,7 @@
 		              	 	<td>{{ $row->alamatpenerima }}</td>
 		              	 	<td>{{ $row->dari }}</td>
 		              	 	<td>{{ $row->tglsurat }}</td>
-		              	 	<td>asdf</td>
+
 		              	 </tr>
 		              	 @endforeach
 

@@ -55,11 +55,11 @@
 <div id="sidebar"><a href="{{ route('index') }}" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
   <ul>
     <li class="{{ Request::is('index') ? 'active' : '' }}"><a href="{{ route('index') }}"><i class="icon icon-home"></i> <span>Dashboard</span></a> </li>
-    <li class="{{ Request::is('agendacamat') ? 'active' : '' }}"><a href="{{ route('agendacamat') }}"><i class="icon icon-file"></i> <span>Agenda Camat</span></a></li>
-    <li class="{{ Request::is('suratmasuk') ? 'active' : '' }}"> <a href="{{ route('suratmasuk') }}"><i class="icon icon-inbox"></i> <span>Surat Masuk</span></a> </li>
-    <li class="{{ Request::is('suratkeluar') ? 'active' : '' }}"> <a href="{{ route('suratkeluar') }}"><i class="icon icon-inbox"></i> <span>Surat keluar</span></a> </li>
-    <li class="{{ Request::is('cuti') ? 'active' : '' }}"> <a href="{{ route('cuti') }}"><i class="icon icon-inbox"></i> <span>Cuti Tahunan</span></a> </li>
-    <li class="{{ Request::is('rekap*') ? 'active' : '' }}"><a href="{{ route('rekap') }}"><i class="icon icon-th-list"></i> <span>Rakapitulasi</span></a></li>
+    <li class="{{ Request::is('agendacamat') ? 'active' : '' }}"><a href="{{ route('agendacamat') }}"><i class="icon icon-pencil"></i> <span>Agenda Camat</span></a></li>
+    <li class="{{ Request::is('suratmasuk') ? 'active' : '' }}"> <a href="{{ route('suratmasuk') }}"><i class="icon icon-pencil"></i> <span>Surat Masuk</span></a> </li>
+    <li class="{{ Request::is('suratkeluar') ? 'active' : '' }}"> <a href="{{ route('suratkeluar') }}"><i class="icon icon-pencil"></i> <span>Surat keluar</span></a> </li>
+    <li class="{{ Request::is('cuti') ? 'active' : '' }}"> <a href="{{ route('cuti') }}"><i class="icon icon-pencil"></i> <span>Cuti Tahunan</span></a> </li>
+    <li class="{{ Request::is('rekap*') ? 'active' : '' }}"><a href="{{ route('rekap') }}"><i class="icon icon-inbox"></i> <span>Laporan</span></a></li>
     <!-- <li><a href="grid.html"><i class="icon icon-fullscreen"></i> <span>Full width</span></a></li>
     <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>Forms</span> <span class="label label-important">3</span></a>
       <ul>

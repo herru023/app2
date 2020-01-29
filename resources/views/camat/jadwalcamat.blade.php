@@ -9,6 +9,16 @@
 
 
   <div class="container-fluid"><hr>
+
+  <div class="btn-group">
+    <button class="btn btn-info">Aksi</button>
+    <button data-toggle="dropdown" class="btn btn-info dropdown-toggle"><span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a href="{{ route('agendacamat') }}">Tambah Jadwal</a></li>
+      <li><a href="#">Print</a></li>
+    </ul>
+  </div>
+
     <div class="row-fluid">
       <div class="span12">
         <div class="widget-box">
@@ -37,7 +47,16 @@
               	 	<td>{{ $row->kegiatan }}</td>
               	 	<td>{{ $row->tempat }}</td>
               	 	<td>{{ $row->bertugas }}</td>
-              	 	<td>asdf</td>
+              	 	<td>
+                    <div class="btn-group">
+                      <button class="btn btn-mini">Aksi</button>
+                      <button class="btn btn-mini" data-toggle="dropdown" class="btn btn-info dropdown-toggle"><span class="caret"></span></button>
+                      <ul class="dropdown-menu">
+                        <li><a href="#">Edit</a></li>
+                        <li><a href="#">Hapus</a></li>
+                      </ul>
+                    </div>
+                  </td>
               	 </tr>
               	 @endforeach
               </tbody>

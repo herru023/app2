@@ -9,11 +9,26 @@
 
 
   <div class="container-fluid"><hr>
+
+  <div class="btn-group">
+    <button class="btn btn-info">Aksi</button>
+    <button data-toggle="dropdown" class="btn btn-info dropdown-toggle"><span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a href="{{ route('suratkeluar') }}">Tambah Surat</a></li>
+      <li><a href="#">Print</a></li>
+    </ul>
+  </div>
+
+
     <div class="row-fluid">
       <div class="span12">
         <div class="widget-box">
           <div class="widget-title"> <span class="icon"> <i class="icon-info-sign"></i> </span>
             <h5>Surat Keluar</h5>
+            
+          </div>
+          <div class="widget-content nopadding">
+            <label>
             <form action="{{route('indexsk')}}" method="GET">             
               <div class="control-group">
                 <div class="controls">
@@ -26,12 +41,12 @@
                     <option value="Kasi Pip">kasi Pip</option>
                     <option value="Camat">Camat</option>
                   </select>
-                  <button type="submit">Cari</button>
+                  <button class="btn btn-mini" type="submit">Cari</button>
                 </div>
               </div>
             </form>
-          </div>
-          <div class="widget-content nopadding">
+            </label>
+
             <table id="table_id" class="table table-bordered table-striped">
               <thead>
                 <tr>
@@ -55,7 +70,16 @@
               	 	<td>{{ $row->tglsurat }}</td>
               	 	<td>{{ $row->dari }}</td>
               	 	<td>{{ $row->prihal }}</td>
-              	 	<td>asdf</td>
+              	 	<td>
+                    <div class="btn-group">
+                      <button class="btn btn-mini">Aksi</button>
+                      <button class="btn btn-mini" data-toggle="dropdown" class="btn btn-info dropdown-toggle"><span class="caret"></span></button>
+                      <ul class="dropdown-menu">
+                        <li><a href="#">Edit</a></li>
+                        <li><a href="#">Hapus</a></li>
+                      </ul>
+                    </div> 
+                  </td>
               	 </tr>
               	 @endforeach
               </tbody>

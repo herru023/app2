@@ -13,7 +13,7 @@
 	    <div class="span6">
 	      <div class="widget-box">
 	        <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
-	          <h5>Masukkan Disposisi</h5>
+	          <h5>Agenda Camat</h5>
 	        </div>
 	        <div class="widget-content nopadding">
 	          <form method="post" action="{{ route('simpanac') }}" class="form-horizontal">
@@ -73,7 +73,7 @@
 		  <div class="span6">
 		      <div class="widget-box">
 		        <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
-		          <h5>Data Kegiatan camat</h5>
+		          <h5>Data Kegiatan Camat</h5>
 		        </div>
 		        <div class="widget-content nopadding">
 		            <table class="table table-bordered table-striped">
@@ -82,7 +82,6 @@
 		                  <th>No.</th>
 		                  <th>Hari, waktu dan Tanggal</th>
 		                  <th>Tempat</th>
-		                  <th>aksi</th>
 		                </tr>
 		              </thead>
 		              <tbody>
@@ -93,7 +92,6 @@
 		              	 	<td>{{ $no }}</td>
 		              	 	<td>{{ $row->hari }},{{ $row->waktu }} ,{{ $row->tglkegiatan }}</td>
 		              	 	<td>{{ $row->tempat }}</td>
-		              	 	<td>asdf</td>
 		              	 </tr>
 		              	 @endforeach
 

@@ -83,7 +83,6 @@
 		                  <th>Surat Dari</th>
 		                  <th>Tanggal Diterima</th>
 		                  <th>Prihal</th>
-		                  <th>aksi</th>
 		                </tr>
 		              </thead>
 		              <tbody>
@@ -95,7 +94,6 @@
 		              	 	<td>{{ $row->suratdari }}</td>
 		              	 	<td>{{ date_format ($row->created_at, 'd-m-Y') }}</td>
 		              	 	<td>{{ $row->prihal }}</td>
-		              	 	<td><a class="tip" href="" title="Lihat"><i class="icon-eye-open"></i></a> </td>
 		              	 </tr>
 		              	 @endforeach
 

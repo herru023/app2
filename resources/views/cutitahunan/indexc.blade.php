@@ -3,18 +3,17 @@
 
 <div id="content">
   <div id="content-header">
-    <div id="breadcrumb"> <a href="{{ route('index') }}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a><a href="{{ route('rekap') }}" class="tip-bottom">Rekap</a> <a href="{{ route('indexsm') }}" class="tip-bottom">Surat Masuk</a> </div>
-    <h1>Surat Masuk</h1>
+    <div id="breadcrumb"> <a href="{{ route('index') }}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a><a href="{{ route('rekap') }}" class="tip-bottom">Rekap</a> <a href="{{ route('indexc') }}" class="tip-bottom">Cuti Tahunan</a> </div>
+    <h1>Cuti Tahunan</h1>
   </div>
-
 
   <div class="container-fluid"><hr>
 
-  <div class="btn-group">
+    <div class="btn-group">
     <button class="btn btn-info">Aksi</button>
     <button data-toggle="dropdown" class="btn btn-info dropdown-toggle"><span class="caret"></span></button>
     <ul class="dropdown-menu">
-      <li><a href="{{ route('suratmasuk') }}">Tambah Surat</a></li>
+      <li><a href="{{ route('cuti') }}">Tambah Cuti</a></li>
       <li><a href="#">Print</a></li>
     </ul>
   </div>
@@ -30,28 +29,36 @@
               <thead>
                 <tr>
                   <th>No.</th>
-                  <th>Surat dari</th>
-                  <th>Tanggal Surat</th>
-                  <th>Nomor Surat</th>
-                  <th>Tanggal diterima</th>
-                  <th>Untuk</th>
-                  <th>Prihal</th>
+                  <th>Nama</th>
+                  <th>nip</th>
+                  <th>Pangkat</th>
+                  <th>Jabatan</th>
+                  <th>Unit Kerja</th>
+                  <th>Lamanya</th>
+                  <th>Di Jalankn di</th>
+                  <th>Tgl Mulai</th>
+                  <th>Sampai Tgl</th>
+                  <th>Tgl Masuk</th>
                   <th>aksi</th>
                 </tr>
               </thead>
               <tbody>
-              	<?php $no = 0;?>
-              	@foreach($suratmasuk as $row)
-              	<?php $no++;?>
-              	 <tr>
-              	 	<td>{{ $no }}</td>
-              	 	<td>{{ $row->suratdari }}</td>
-              	 	<td>{{ $row->tglsurat }}</td>
-              	 	<td>{{ $row->nosurat }}</td>
-              	 	<td>{{ date_format ($row->created_at, 'd-m-Y') }}</td>
-              	 	<td>{{ $row->untuk }}</td>
-              	 	<td>{{ $row->prihal }}</td>
-              	 	<td>
+                <?php $no = 0;?>
+                @foreach($cuti as $row)
+                <?php $no++;?>
+                 <tr>
+                  <td>{{ $no }}</td>
+                  <td>{{ $row->nama }}</td>
+                  <td>{{ $row->nip }}</td>
+                  <td>{{ $row->pangkat }}</td>
+                  <td>{{ $row->jabatan }}</td>
+                  <td>{{ $row->unit }}</td>
+                  <td>{{ $row->lamanya }}</td>
+                  <td>{{ $row->jalankan }}</td>
+                  <td>{{ $row->tgl_mulai }}</td>
+                  <td>{{ $row->sampai_tgl }}</td>
+                  <td>{{ $row->masuk_tgl }}</td>
+                  <td>
                     <div class="btn-group">
                       <button class="btn btn-mini">Aksi</button>
                       <button class="btn btn-mini" data-toggle="dropdown" class="btn btn-info dropdown-toggle"><span class="caret"></span></button>
@@ -59,10 +66,10 @@
                         <li><a href="#">Edit</a></li>
                         <li><a href="#">Hapus</a></li>
                       </ul>
-                    </div> 
+                    </div>
                   </td>
-              	 </tr>
-              	 @endforeach
+                 </tr>
+                 @endforeach
               </tbody>
             </table>
         </div>
