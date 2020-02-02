@@ -3,49 +3,49 @@
 
 <div id="content">
   <div id="content-header">
-    <div id="breadcrumb"> <a href="{{ route('index') }}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a><a href="{{ route('cutitahunan') }}" title="Cuti Tahunan" class="tip-bottom">Cuti Tahunan</a> </div>
-    <h1>Cuti Tahunan</h1>
+    <div id="breadcrumb"> <a href="{{ route('index') }}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a><a href="{{ route('rekap') }}" class="tip-bottom">Rekap</a> <a href="{{ route('indexc') }}" class="tip-bottom">Cuti Tahunan</a><a href="" class="tip-bottom">Edit</a> </div>
+    <h1>Edit Cuti Tahunan</h1>
   </div>
 
   <div class="container-fluid">
   <hr>
-    <div class="row-fluid">
-      <div class="span6">
-        <div class="widget-box">
-          <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
-            <h5>Cuti Tahunan</h5>
-          </div>
-          <div class="widget-content nopadding">
-            <form method="post" action="{{ route('simpanc') }}" class="form-horizontal">
-              {{ csrf_field() }}
-              <div class="control-group">
+	  <div class="row-fluid">
+	    <div class="span12">
+	      <div class="widget-box">
+	        <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+	          <h5>Edit</h5>
+	        </div>
+	        <div class="widget-content nopadding">
+	          <form method="post" action="{{ route('simpaneditc', $surat->id) }}" class="form-horizontal">
+	          	{{ csrf_field() }}
+	            <div class="control-group">
                 <label class="control-label">Nama :</label>
                 <div class="controls">
-                  <input type="text" name="nama" class="span11" placeholder="Nama">
+                  <input type="text" name="nama" class="span5" value="{{ $surat->nama }}">
                 </div>
               </div>
               <div class="control-group">
                 <label class="control-label">NIP :</label>
                 <div class="controls">
-                  <input type="text" name="nip" class="span11" placeholder="Nip">
+                  <input type="text" name="nip" class="span5" value="{{ $surat->nip }}">
                  </div>
               </div>
               <div class="control-group">
                 <label class="control-label">Pangkat / Golongan Ruangan :</label>
                 <div class="controls">
-                  <input type="text" name="pangkat" class="span11" placeholder="Pangkat">
+                  <input type="text" name="pangkat" class="span5" value="{{ $surat->pangkat }}">
                 </div>
               </div>
               <div class="control-group">
                 <label class="control-label">Jabatan :</label>
                 <div class="controls">
-                  <input type="text" name="jabatan" class="span11" placeholder="Jabatan">
+                  <input type="text" name="jabatan" class="span5" value="{{ $surat->jabatan }}">
                  </div>
               </div>
               <div class="control-group">
                 <label class="control-label">Unit Kerja :</label>
                 <div class="controls">
-                  <select name="unit">
+                  <select name="unit" class="span5" value="{{ $surat->unit }}">
                     <option value="Kasi Trantip">Kasi Trantip</option>
                     <option value="Kasi Pem">kasi Pem</option>
                     <option value="Kasi Kessos">kasi Kessos</option>
@@ -71,62 +71,43 @@
               <div class="control-group">
                 <label class="control-label">Lamanya :</label>
                 <div class="controls">
-                  <input type="text" name="lamanya" class="span11" placeholder="Lamanya">
+                  <input type="text" name="lamanya" class="span5" value="{{ $surat->lamanya }}">
                  </div>
               </div>
               <div class="control-group">
                 <label class="control-label">Di Jalankan di :</label>
                 <div class="controls">
-                  <input type="text" name="jalankan" class="span11" placeholder="Di Jalankan di">
+                  <input type="text" name="jalankan" class="span5" value="{{ $surat->jalankan }}">
                  </div>
               </div>
               <div class="control-group">
                 <label class="control-label">Terhitung Mulai Tanggal :</label>
                 <div class="controls">
-                  <input type="date" name="tgl_mulai" class="datepicker span11">
+                  <input type="date" name="tgl_mulai" class="datepicker span5" value="{{ $surat->tgl_mulai }}">
                  </div>
               </div>
               <div class="control-group">
                 <label class="control-label">Sampai Dengan Tanggal :</label>
                 <div class="controls">
-                  <input type="date" name="sampai_tgl" class="datepicker span11">
+                  <input type="date" name="sampai_tgl" class="datepicker span5" value="{{ $surat->sampai_tgl }}">
                  </div>
               </div>
               <div class="control-group">
                 <label class="control-label">Masuk Kerja Tanggal :</label>
                 <div class="controls">
-                  <input type="date" name="masuk_tgl" class="datepicker span11">
+                  <input type="date" name="masuk_tgl" class="datepicker span5" value="{{ $surat->masuk_tgl }}">
                  </div>
               </div>
               <div class="form-actions">
                 <button type="submit" class="btn btn-success">Save</button>
+                <a href="{{ route('indexc') }}" class="btn btn-danger" onclick="return confirm('Tinggalkan halaman?')">Cancel</a>
               </div>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      <div class="span6">
-          <div class="widget-box">
-            <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
-              <h5>Ketentuan</h5>
-            </div>
-            <div class="widget-content">
-            <h5>Dengan Ketentuan sebagai berikut : </h5>
-            <p>
-              <li>
-                Sebelum menjalankan cuti Tahunan wajib menyerahkan pekerjaan kepada atasan langsung.
-              </li>
-              <li>
-                Setelah selesai menjalankan cuti Tahunan wajib melaporkan diri kepada atasan langsung dan bekerja kembali sebagaimana mestinya.<br>
-                Demikian Surat Izin Cuti Tahunan ini dibuat untuk dapat dipergunakan sebagaimana mestinya.
-              </li>
-            </p>
-          </div>
-        </div>
-    </div>
+	          </form>
+		      </div>
+		  	</div>
+		  </div>
+	  </div>
   </div>
-</div>
 </div>
 
 @endsection

@@ -8,5 +8,5 @@ class Agendacamat extends Model
 {
 	protected $table ="agendacamat";
 
-	protected $fillable =['id_agenda','tglkegiatan','kegiatan','hari','waktu','tempat', 'bertugas'];
+	protected $fillable =['id','tglkegiatan','kegiatan','hari','waktu','tempat', 'bertugas'];
 } 

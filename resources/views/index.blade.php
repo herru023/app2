@@ -8,12 +8,12 @@
   <div class="container-fluid">
     <div class="quick-actions_homepage">
       <ul class="quick-actions">
-        <li class="bg_lb"> <a href="{{ route('index') }}"> <i class="icon-dashboard"></i>My Dashboard </a> </li>
+        <li class="bg_lb"> <a href="{{ route('indexjcamat') }}"> <i class="icon-pencil"></i> Agenda Camat</a> </li>
         <li class="bg_ly"> <a href="{{ route('suratmasuk') }}"> <i class="icon-pencil"></i> Surat Masuk </a> </li>
-        <li class="bg_lo"> <a href="{{ route('suratkeluar') }}"> <i class="icon-pencil"></i> Surat Keluar </a> </li>
-        <li class="bg_ly"> <a href="{{ route('cuti') }}"> <i class="icon-pencil"></i> Cuti Tahunan</a> </li>
-        <li class="bg_lb"> <a href="{{ route('indexjcamat') }}"> <i class="icon-pencil"></i> Jadwal Camat</a> </li>
-        <li class="bg_ls"> <a href="{{ route('rekap') }}"> <i class="icon-inbox"></i> Rekapitulasi</a> </li>  
+        <li class="bg_lh"> <a href="{{ route('suratkeluar') }}"> <i class="icon-pencil"></i> Surat Keluar </a> </li>
+        <li class="bg_lo"> <a href="{{ route('cutitahunan') }}"> <i class="icon-pencil"></i> Cuti Tahunan</a> </li>
+        <li class="bg_lg"> <a href="{{ route('suratimb') }}"> <i class="icon-pencil"></i> Surat IMB</a> </li>
+        <li class="bg_ls"> <a href="{{ route('rekap') }}"> <i class="icon-inbox"></i> Laporan</a> </li>  
 <!--         <li class="bg_ls"> <a href="grid.html"> <i class="icon-fullscreen"></i> Full width</a> </li>
         <li class="bg_lo span3"> <a href="form-common.html"> <i class="icon-th-list"></i> Forms</a> </li>
         <li class="bg_ls"> <a href="buttons.html"> <i class="icon-tint"></i> Buttons</a> </li>

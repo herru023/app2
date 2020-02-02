@@ -8,5 +8,5 @@ class Suratkeluar extends Model
 {
 	protected $table ="suratkeluar";
 
-	protected $fillable =['id_suratkeluar','noberkas','alamatpenerima','tglsurat','dari','prihal'];
+	protected $fillable =['id','noberkas','alamatpenerima','tglsurat','dari','prihal'];
 } 

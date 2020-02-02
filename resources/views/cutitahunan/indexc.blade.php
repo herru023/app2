@@ -9,12 +9,12 @@
 
   <div class="container-fluid"><hr>
 
-    <div class="btn-group">
+  <div class="btn-group">
     <button class="btn btn-info">Aksi</button>
     <button data-toggle="dropdown" class="btn btn-info dropdown-toggle"><span class="caret"></span></button>
     <ul class="dropdown-menu">
-      <li><a href="{{ route('cuti') }}">Tambah Cuti</a></li>
-      <li><a href="#">Print</a></li>
+      <li><a href="{{ route('cutitahunan') }}"><i class="icon icon-plus"></i> Tambah Cuti</a></li>
+      <li><a href="{{ route('printc') }}" target="_blank"><i class="icon icon-print"></i> Print</a></li>
     </ul>
   </div>
 
@@ -58,15 +58,13 @@
                   <td>{{ $row->tgl_mulai }}</td>
                   <td>{{ $row->sampai_tgl }}</td>
                   <td>{{ $row->masuk_tgl }}</td>
-                  <td>
-                    <div class="btn-group">
-                      <button class="btn btn-mini">Aksi</button>
-                      <button class="btn btn-mini" data-toggle="dropdown" class="btn btn-info dropdown-toggle"><span class="caret"></span></button>
-                      <ul class="dropdown-menu">
-                        <li><a href="#">Edit</a></li>
-                        <li><a href="#">Hapus</a></li>
-                      </ul>
-                    </div>
+                  <td class="taskOptions">
+                    <a href="{{ route('editc', $row->id) }}" style="float: left;" class="btn btn-primary btn-mini"><i class="icon icon-edit"></i> Edit</a>
+                    <form action="{{ route('deletec', $row->id) }}" method="post">
+                    {{ csrf_field() }}
+                    {{ method_field('delete') }}
+                    <button style="float: left" class="btn btn-danger btn-mini" type="submit" onclick="return confirm('Anda yakin ingin menghapus?')"><i class="icon icon-remove"></i> Hapus</button>
+                    </form> 
                   </td>
                  </tr>
                  @endforeach

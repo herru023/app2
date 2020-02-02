@@ -14,8 +14,8 @@
     <button class="btn btn-info">Aksi</button>
     <button data-toggle="dropdown" class="btn btn-info dropdown-toggle"><span class="caret"></span></button>
     <ul class="dropdown-menu">
-      <li><a href="{{ route('suratkeluar') }}">Tambah Surat</a></li>
-      <li><a href="#">Print</a></li>
+      <li><a href="{{ route('suratkeluar') }}"><i class="icon icon-plus"></i> Tambah Surat</a></li>
+      <li><a href="{{ route('printsk') }}" target="_blank"><i class="icon icon-print"></i> Print</a></li>
     </ul>
   </div>
 
@@ -27,7 +27,7 @@
             <h5>Surat Keluar</h5>
             
           </div>
-          <div class="widget-content nopadding">
+<!--           <div class="widget-content nopadding">
             <label>
             <form action="{{route('indexsk')}}" method="GET">             
               <div class="control-group">
@@ -45,7 +45,7 @@
                 </div>
               </div>
             </form>
-            </label>
+            </label> -->
 
             <table id="table_id" class="table table-bordered table-striped">
               <thead>
@@ -70,15 +70,13 @@
               	 	<td>{{ $row->tglsurat }}</td>
               	 	<td>{{ $row->dari }}</td>
               	 	<td>{{ $row->prihal }}</td>
-              	 	<td>
-                    <div class="btn-group">
-                      <button class="btn btn-mini">Aksi</button>
-                      <button class="btn btn-mini" data-toggle="dropdown" class="btn btn-info dropdown-toggle"><span class="caret"></span></button>
-                      <ul class="dropdown-menu">
-                        <li><a href="#">Edit</a></li>
-                        <li><a href="#">Hapus</a></li>
-                      </ul>
-                    </div> 
+              	 	<td class="taskOptions">
+                    <a href="{{ route('editsk', $row->id) }}" style="float: left;" class="btn btn-primary btn-mini"><i class="icon icon-edit"></i> Edit</a>
+                    <form action="{{ route('deletesk', $row->id) }}" method="post">
+                    {{ csrf_field() }}
+                    {{ method_field('delete') }}
+                    <button style="float: left" class="btn btn-danger btn-mini" type="submit" onclick="return confirm('Anda yakin ingin menghapus?')"><i class="icon icon-remove"></i> Hapus</button>
+                    </form> 
                   </td>
               	 </tr>
               	 @endforeach

@@ -35,10 +35,6 @@
   <ul class="nav">
     <li class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" class="dropdown-toggle"><i class="icon icon-user"></i>  <span class="text">{{ Auth::user()->username }}</span><b class="caret"></b></a>
       <ul class="dropdown-menu">
-        <li><a href="#"><i class="icon-user"></i> My Profile</a></li>
-        <li class="divider"></li>
-        <li><a href="#"><i class="icon-check"></i> My Tasks</a></li>
-        <li class="divider"></li>
         <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
         	<i class="icon-key"></i> Log Out</a>
         	<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -58,7 +54,8 @@
     <li class="{{ Request::is('agendacamat') ? 'active' : '' }}"><a href="{{ route('agendacamat') }}"><i class="icon icon-pencil"></i> <span>Agenda Camat</span></a></li>
     <li class="{{ Request::is('suratmasuk') ? 'active' : '' }}"> <a href="{{ route('suratmasuk') }}"><i class="icon icon-pencil"></i> <span>Surat Masuk</span></a> </li>
     <li class="{{ Request::is('suratkeluar') ? 'active' : '' }}"> <a href="{{ route('suratkeluar') }}"><i class="icon icon-pencil"></i> <span>Surat keluar</span></a> </li>
-    <li class="{{ Request::is('cuti') ? 'active' : '' }}"> <a href="{{ route('cuti') }}"><i class="icon icon-pencil"></i> <span>Cuti Tahunan</span></a> </li>
+    <li class="{{ Request::is('cutitahunan') ? 'active' : '' }}"> <a href="{{ route('cutitahunan') }}"><i class="icon icon-pencil"></i> <span>Cuti Tahunan</span></a> </li>
+    <li class="{{ Request::is('suratimb') ? 'active' : '' }}"> <a href="{{ route('suratimb') }}"><i class="icon icon-pencil"></i> <span>Surat IMB</span></a> </li>
     <li class="{{ Request::is('rekap*') ? 'active' : '' }}"><a href="{{ route('rekap') }}"><i class="icon icon-inbox"></i> <span>Laporan</span></a></li>
     <!-- <li><a href="grid.html"><i class="icon icon-fullscreen"></i> <span>Full width</span></a></li>
     <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>Forms</span> <span class="label label-important">3</span></a>
@@ -108,7 +105,7 @@
 
 
 <div class="row-fluid">
-  <div id="footer" class="span12"> 2019 &copy; Banjarmasin Tengah </div>
+  <div id="footer" class="span12"> 2020 &copy; Banjarmasin Tengah </div>
 </div>
 
 <!--end-Footer-part-->

@@ -33,7 +33,7 @@
 	            <div class="control-group">
 	              <label class="control-label">Hari kegiatan :</label>
 	              <div class="controls">
-	                <select name="hari">
+	                <select name="hari" class="span11">
 	                  <option value="Senin">Senin</option>
 	                  <option value="Selasa">Selasa</option>
 	                  <option value="Rabu">Rabu</option>
@@ -59,8 +59,16 @@
 	            <div class="control-group">
 	              <label class="control-label">Bertugas :</label>
 	              <div class="controls">
-	                <input type="text" name="bertugas" class="span11">
-	               </div>
+	                <select name="bertugas" class="span11">
+	                  <option value="Kasi Trantip">Kasi Trantip</option>
+	                  <option value="Kasi Pem">kasi Pem</option>
+	                  <option value="Kasi Kessos">kasi Kessos</option>
+	                  <option value="Kasi Ekoband">kasi Ekobang</option>
+	                  <option value="Kasi Umpag">kasi Umpag</option>
+	                  <option value="Kasi Pip">kasi Pip</option>
+	                  <option value="Camat">Camat</option>
+	                </select>
+	              </div>
 	            </div>
 	            <div class="form-actions">
 	              <button type="submit" class="btn btn-success">Save</button>

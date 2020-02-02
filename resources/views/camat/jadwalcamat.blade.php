@@ -14,8 +14,8 @@
     <button class="btn btn-info">Aksi</button>
     <button data-toggle="dropdown" class="btn btn-info dropdown-toggle"><span class="caret"></span></button>
     <ul class="dropdown-menu">
-      <li><a href="{{ route('agendacamat') }}">Tambah Jadwal</a></li>
-      <li><a href="#">Print</a></li>
+      <li><a href="{{ route('agendacamat') }}"><i class="icon icon-plus"></i> Tambah Jadwal</a></li>
+      <li><a href="{{ route('printcamat') }}" target="_blank"><i class="icon icon-print"></i> Print</a></li>
     </ul>
   </div>
 
@@ -47,15 +47,13 @@
               	 	<td>{{ $row->kegiatan }}</td>
               	 	<td>{{ $row->tempat }}</td>
               	 	<td>{{ $row->bertugas }}</td>
-              	 	<td>
-                    <div class="btn-group">
-                      <button class="btn btn-mini">Aksi</button>
-                      <button class="btn btn-mini" data-toggle="dropdown" class="btn btn-info dropdown-toggle"><span class="caret"></span></button>
-                      <ul class="dropdown-menu">
-                        <li><a href="#">Edit</a></li>
-                        <li><a href="#">Hapus</a></li>
-                      </ul>
-                    </div>
+              	 	<td class="taskOptions">
+                    <a href="{{ route('editcamat', $row->id) }}" style="float: left;" class="btn btn-primary btn-mini"><i class="icon icon-edit"></i> Edit</a>
+                    <form action="{{ route('deletecamat', $row->id) }}" method="post">
+                    {{ csrf_field() }}
+                    {{ method_field('delete') }}
+                    <button style="float: left" class="btn btn-danger btn-mini" type="submit" onclick="return confirm('Anda yakin ingin menghapus?')"><i class="icon icon-remove"></i> Hapus</button>
+                    </form> 
                   </td>
               	 </tr>
               	 @endforeach

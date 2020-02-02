@@ -8,5 +8,5 @@ class Suratmasuk extends Model
 {
 	protected $table ="suratmasuk";
 
-	protected $fillable =['id_suratmasuk','suratdari','tglsurat','nosurat','tglditerima','untuk','prihal'];
+	protected $fillable =['id','suratdari','tglsurat','nosurat','tglditerima','untuk','prihal'];
 } 
