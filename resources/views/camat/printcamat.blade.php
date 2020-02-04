@@ -57,7 +57,26 @@
         <br>
         <br>
         <br>
-        <br><table width="100%" class="info"><tbody><tr>    <td width="30%"></td>   <td width="30%"></td>   <td width="40%">Yang menyatakan,....../....../2020 :<br>Camat<br><br><br><br><br><br></td></tr><tr> <td width="30%"></td>   <td width="2%"></td>    <td width="68%">.................................................................</td></tr><tr>  <td width="30%"></td>   <td width="2%"></td>    </tr></tbody></table>
+        <br>
+        <table width="100%" class="info">
+          <tbody>
+            <tr>
+              <td width="30%"></td>
+              <td width="30%"></td>
+              <td width="40%">Yang menyatakan,....../....../2020 :<br>Camat<br><br><br><br><br><br></td></tr>
+              <tr>
+                <td width="30%"></td>
+                <td width="2%"></td>    
+                <td width="68%">
+                  .................................................................<br>
+                  Drs. H. Diyanoor, MA <br>NIP. 19690119 199010 1 001
+                </td>
+              </tr>
+              <tr>  
+                <td width="30%"></td><td width="2%"></td>    
+              </tr>
+            </tbody>
+          </table>
     </page>
 </body>
 </html>
